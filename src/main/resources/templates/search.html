@@ -38,6 +38,22 @@
 
     <!-- TODO #2 - Loop over jobs map to display all job fields -->
 
+    <!-- To display the search result-->
+    <div th:if="${searchSize} != null">
+        <h3 th:text="'(' + ${searchSize} + ') ' + 'Results'"></h3>
+    </div>
+
+    <div class="table-responsive" th:each="job : ${jobs}">
+        <table class="job-listing">
+            <div th:each="ajob : ${job}">
+                <tr>
+                    <th th:text="${#strings.capitalizeWords(ajob.key)}"></th>
+                    <td th:text="${ajob.value}"></td>
+                </tr>
+            </div>
+        </table>
+    </div>
+
 </div>
 
 </body>
