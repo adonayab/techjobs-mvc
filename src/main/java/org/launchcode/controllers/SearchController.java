@@ -29,7 +29,9 @@ public class SearchController {
     @RequestMapping(value = "results")
     public String search(Model model, @RequestParam String searchType,
                           @RequestParam String searchTerm) {
+
         model.addAttribute("columns", ListController.columnChoices);
+        model.addAttribute("activeButton",searchType);// Bonus mission: storing the value of search field
         ArrayList<HashMap<String, String>> jobs;
 
         if (searchType.equals("all")) {

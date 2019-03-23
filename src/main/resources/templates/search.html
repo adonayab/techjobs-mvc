@@ -20,7 +20,7 @@
                         name="searchType"
                         th:id="${column.key}"
                         th:value="${column.key}"
-                        th:checked="${column.key == 'all'}"/>
+                        th:checked="${column.key == activeButton}"/> <!--Bonus mission: storing the value of search field -->
                 <label th:for="${column.key}" th:text="${column.value}"></label>
             </span>
 
@@ -43,16 +43,7 @@
         <h3 th:text="'(' + ${searchSize} + ') ' + 'Results'"></h3>
     </div>
 
-    <div class="table-responsive" th:each="job : ${jobs}">
-        <table class="job-listing">
-            <div th:each="ajob : ${job}">
-                <tr>
-                    <th th:text="${#strings.capitalizeWords(ajob.key)}"></th>
-                    <td th:text="${ajob.value}"></td>
-                </tr>
-            </div>
-        </table>
-    </div>
+    <div th:replace="fragments :: job-listing"></div>
 
 </div>
 
