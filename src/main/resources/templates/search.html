@@ -40,7 +40,7 @@
 
     <!-- To display the search result-->
     <div th:if="${searchSize} != null">
-        <h3 th:text="'(' + ${searchSize} + ') ' + 'Results'"></h3>
+        <h3 th:text="'(' + ${searchSize} + ') ' + 'Result(s)'"></h3>
     </div>
 
     <div th:replace="fragments :: job-listing"></div>
