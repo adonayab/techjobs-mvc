@@ -35,7 +35,7 @@ public class SearchController {
         ArrayList<HashMap<String, String>> jobs;
 
         if (searchType.equals("all")) {
-            jobs = JobData.findAll();
+            jobs = JobData.findByValue(searchTerm);
             model.addAttribute("jobs", jobs);
             model.addAttribute("searchSize", jobs.size());
             return "search";
