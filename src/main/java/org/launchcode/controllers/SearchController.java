@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -32,7 +33,7 @@ public class SearchController {
 
         model.addAttribute("columns", ListController.columnChoices);
         model.addAttribute("activeButton",searchType);// Bonus mission: storing the value of search field
-        ArrayList<HashMap<String, String>> jobs;
+        List<HashMap<String, String>> jobs;
 
         if (searchType.equals("all")) {
             jobs = JobData.findByValue(searchTerm);
